@@ -1,21 +1,151 @@
 .gradient-custom-3 {
-    /* fallback for old browsers */
-    background: #84fab0;
+  /* fallback for old browsers */
+  background: #84fab0;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5))
+}
+
+.gradient-custom-4 {
+  /* fallback for old browsers */
+  background: #84fab0;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
+} 
+
+.gradient-custom-2 {
+  /* fallback for old browsers */
+  background: #fbc2eb;
   
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238, 1));
   
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5))
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238, 1))
+  }
+
+  nav {
+    background-color: black;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
   }
   
-  .gradient-custom-4 {
-    /* fallback for old browsers */
-    background: #84fab0;
+  nav a {
+    font-size: 22px;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    padding: 10px 15px;
+    transition: color 0.6s ease, transform 0.3s ease;
+  }
   
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+  nav a:hover {
+    color: hotpink;
+    transform: scale(1.05);
+  }
   
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
-  } 
+  nav a:active {
+    transform: scale(0.95);
+  }
+  
+  nav a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: hotpink;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  nav a:hover::before {
+    visibility: visible;
+    width: 100%;
+  }
+  
+  a.active {
+    background: mediumpurple;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  nav a:focus {
+    outline: none;
+  }
+  
+  button {
+    background-color: #008CBA;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: auto;
+    height: auto;
+    box-sizing: border-box;
+  }
+  
+  button:hover {
+    background-color: #005f6a;
+    transform: scale(1.05);
+  }
+  
+  button:active {
+    transform: scale(0.98);
+    transition: transform 0.05s ease;
+  }
+  
+  button:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
+  input[type="text"], input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  input[type="text"]:focus, input[type="password"]:focus {
+    border: 1px solid #008CBA;
+    box-shadow: 0px 0px 10px rgba(0, 140, 186, 0.6);
+    animation: glowEffect 1.5s ease infinite;
+  }
+  
+  @keyframes glowEffect {
+    0% {
+      box-shadow: 0px 0px 5px rgba(0, 140, 186, 0.2);
+    }
+    50% {
+      box-shadow: 0px 0px 10px rgba(0, 140, 186, 0.6);
+    }
+    100% {
+      box-shadow: 0px 0px 5px rgba(0, 140, 186, 0.2);
+    }
+  }
+  
+  .active {
+    background-color: mediumpurple;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+  }

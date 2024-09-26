@@ -22,7 +22,7 @@ export function Login() {
     const onSubmit = (data: LoginUser) => {
         handleLogin(data)
             .then(response => {
-                if (response.status === 'success') {
+                if (response.status === 'ok') {
                     navigate('/profile')
                 } else {
                     setGeneralError(response.message || 'Login failed')
