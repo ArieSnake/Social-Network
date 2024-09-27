@@ -16,13 +16,13 @@ export type LoginUser = Pick<IUser, 'login'| 'password'>
 export interface IResponse{
     status:string
     message?:string
-    paylod?:unknown
+    payload?:unknown
     user?:IWideUser
 }
 
 export interface IWideUser extends IUser{
     followers: IUser[]
-    followings: IUser[]
+    following: IUser[]
 }
 export interface IContextType{
     account:IWideUser
