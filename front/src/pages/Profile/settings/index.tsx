@@ -17,6 +17,9 @@ export const Settings = () => {
                                 <NavLink to="password-update" className="btn btn-secondary">
                                     Update Password
                                 </NavLink>
+                                <NavLink to="privacy-update" className="btn btn-primary me-2" style={{marginLeft:'7px'}}>
+                                    Privacy Settings
+                                </NavLink>
                             </div>
                             <Outlet />
                         </MDBCardBody>

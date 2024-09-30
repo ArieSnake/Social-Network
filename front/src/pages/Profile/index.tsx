@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react"
+import { createContext, useEffect, useState } from "react"
 import { Outlet, useNavigate } from "react-router-dom"
 import { handleLogout, handleVerify } from "../../lib/api"
-import { IWideUser } from "../../lib/types"
+import { IContextType, IWideUser } from "../../lib/types"
 import CustomNavLink from "../../components/navlink"
+export const AccountContext = createContext<IContextType | undefined>(undefined);
+
 
 export const Profile = () => {
     const navigate = useNavigate()
@@ -16,7 +18,7 @@ export const Profile = () => {
                 setAccount(response.user)
             }
         })
-    }, [])
+    }, [navigate])
     
     const logout = () => {
         handleLogout()
@@ -54,4 +56,3 @@ export const Profile = () => {
     </>
 }
 
-/*  */

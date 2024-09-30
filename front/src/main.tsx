@@ -9,6 +9,10 @@ import { Dashboard } from './pages/Profile/dashboard';
 import { Settings } from './pages/Profile/settings';  
 import { PasswordUpdate } from './pages/Profile/settings/password-update';
 import { LoginUpdate } from './pages/Profile/settings/login-update';  
+import { Posts } from './pages/Profile/Posts';
+import { Search } from './pages/Profile/Search';
+import { UserProfile } from './pages/Profile/UserProfile'; // New import
+import { PrivacyUpdate } from './pages/Profile/settings/privacy-update';
 
 const routes = createBrowserRouter([
   {
@@ -28,6 +32,18 @@ const routes = createBrowserRouter([
         element: <Dashboard />
       },
       {
+        path: 'posts',
+        element: <Posts />
+      },
+      {
+        path: 'search',
+        element: <Search />
+      },
+      {
+        path: ':id', 
+        element: <UserProfile />
+      },
+      {
         path: 'settings',
         element: <Settings />,  
         children: [
@@ -38,12 +54,18 @@ const routes = createBrowserRouter([
           {
             path: 'login-update',
             element: <LoginUpdate />
+          },
+          {
+            path:'privacy-update',
+            element:<PrivacyUpdate/>
           }
+         
         ]
-      }
+      },
+    
     ]
   }
-]);
+])
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

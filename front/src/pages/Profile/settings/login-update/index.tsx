@@ -3,7 +3,7 @@ import { ILoginUpdateForm } from "../../../../lib/types"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { handleLoginUpdate } from "../../../../lib/api"
-import { MDBBtn, MDBCard, MDBCardBody, MDBCol, MDBContainer, MDBInput, MDBRow } from "mdb-react-ui-kit"
+import { MDBCard, MDBCardBody, MDBCol, MDBContainer, MDBInput, MDBRow } from "mdb-react-ui-kit"
 import { toast, ToastContainer } from "react-toastify"
 
 export const LoginUpdate = () => {
@@ -58,7 +58,7 @@ export const LoginUpdate = () => {
                                     {errors.login && <div className="invalid-feedback">{errors.login.message}</div>}
                                 </div>
 
-                                <button type="submit" className="button-styles">Update Password</button>
+                                <button type="submit" className="button-styles">Update Login</button>
 
                             </form>
                         </MDBCardBody>

@@ -149,3 +149,118 @@
     border-radius: 5px;
     padding: 5px 10px;
   }
+
+ /* Existing styles */
+
+/* Updated posts section */
+.posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ensures posts fill available space */
+  gap: 20px; /* Adds space between posts */
+  justify-items: center;
+  width: 100%;
+}
+
+/* Each post styling */
+/* .list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.list img {
+  width: 150px;
+  height: 150px;
+  border-radius: 4px;
+  object-fit: cover;
+} */
+
+
+/* Updated posts section */
+/* Container for the posts section */
+.posts-container {
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling */
+.posts-header {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Input section for posts */
+.posts-input-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Text input for the post content */
+.posts-text-input {
+  margin-bottom: 10px;
+  padding: 12px;
+  border-radius: 4px;
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+/* Upload button styling */
+.posts-upload-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #17a2b8;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.posts-upload-button:hover {
+  background-color: #138496;
+  transform: scale(1.05);
+}
+/* Gallery container styling */
+.gallery {
+  margin: 20px 0;
+  text-align: center;
+}
+
+/* Gallery grid for posts */
+.gallery-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  width: 100%;
+}
+
+/* Each gallery post */
+.gallery-post {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  max-width: 250px;
+}
+
+/* Image styling to enforce uniform size */
+/* Image styling to display full picture without enlarging */
+.gallery-post-image {
+  width: 100%;
+  height: 200px;
+  object-fit: contain; /* This will ensure the whole image fits in the container */
+  border-radius: 8px;
+  background-color: #f0f0f0; /* Optional: Set a background color to fill empty spaces */
+}

@@ -7,6 +7,7 @@ export interface IUser {
     isPrivate:boolean
     cover:string
     picture:string
+    posts?: IPost[]
 }
 
 export type InputUser = Omit<IUser, 'id'| 'isPrivate'|'cover'| 'picture'>
@@ -37,4 +38,15 @@ export interface IPasswordUpdateForm {
 export interface ILoginUpdateForm {
     password:string
     login: string
+}
+
+export interface IPost {
+    id:number
+    title:string
+    picture:string
+}
+
+export interface IAccount extends IUser {
+    isPrivate: boolean
+    posts: IPost[]
 }

@@ -1,5 +1,5 @@
-import axios from "axios";
-import { InputUser, IResponse, LoginUser } from "./types";
+import axios from "axios"
+import { InputUser, IResponse, LoginUser } from "./types"
 
 const Axios = axios.create({
     baseURL:'http://localhost:4002',
@@ -13,7 +13,7 @@ export const handleSignup = async(user:InputUser):Promise<IResponse> => {
 
 export const handleLogin = async (credentials: LoginUser): Promise<IResponse> => {
     const response = await Axios.post('/login', credentials)
-    return response.data;
+    return response.data
 }
 
 export const handleVerify = async():Promise<IResponse> => {
@@ -49,5 +49,36 @@ export const handlePictureUpload = async (data: FormData):Promise<IResponse> => 
 
 export const handleCoverPictureUpload = async(data: FormData):Promise<IResponse> => {
     const response = await Axios.patch('/cover/upload', data)
+    return response.data
+}
+
+export const handleGetPosts = async():Promise<IResponse> => {
+    const response = await Axios.get('/posts')
+    return response.data
+}
+
+export const handlePostCreation = async(data:FormData):Promise<IResponse> => {
+    const response = await Axios.post('/posts', data)
+    return response.data
+}
+
+export const handleSearch = async(text:string): Promise<IResponse> => {
+    const response = await Axios.get('/search/' + text)
+    return response.data
+}
+
+export const handleGetUserProfile = async (userId: string): Promise<IResponse> => {
+    const response = await Axios.get(`/users/${userId}`)
+    return response.data
+}
+
+export const handleGetUserById = async (id: string): Promise<IResponse> => {
+    const response = await Axios.get(`/account/${id}`)
+    return response.data
+}
+
+
+export const handlePrivacyUpdate = async (): Promise<IResponse> => {
+    const response = await Axios.patch('/account/set')
     return response.data
 }
