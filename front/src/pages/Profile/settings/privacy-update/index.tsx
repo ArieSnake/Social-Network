@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react"
-import { MDBCard, MDBCardBody, MDBCol, MDBContainer, MDBInput, MDBRow } from "mdb-react-ui-kit"
+import { useState, useEffect } from "react"
+import { MDBCard, MDBCardBody, MDBCol, MDBContainer, MDBRow } from "mdb-react-ui-kit"
 import { handlePrivacyUpdate, handleVerify } from "../../../../lib/api"
 import { DEFAULT_PRIVATE_PIC, DEFAULT_PUBLIC_PIC } from "../../../../lib/constant"
 import { toast } from "react-toastify"

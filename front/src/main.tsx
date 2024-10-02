@@ -11,8 +11,9 @@ import { PasswordUpdate } from './pages/Profile/settings/password-update';
 import { LoginUpdate } from './pages/Profile/settings/login-update';  
 import { Posts } from './pages/Profile/Posts';
 import { Search } from './pages/Profile/Search';
-import { UserProfile } from './pages/Profile/UserProfile'; // New import
 import { PrivacyUpdate } from './pages/Profile/settings/privacy-update';
+import { Account } from './pages/Profile/UserProfile';
+import { Requests } from './pages/Profile/Requests';
 
 const routes = createBrowserRouter([
   {
@@ -41,7 +42,11 @@ const routes = createBrowserRouter([
       },
       {
         path: ':id', 
-        element: <UserProfile />
+        element: <Account/>
+      },
+      {
+        path: 'requests',
+        element: <Requests />
       },
       {
         path: 'settings',

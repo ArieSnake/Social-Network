@@ -8,7 +8,11 @@ export interface IUser {
     cover:string
     picture:string
     posts?: IPost[]
+    followers?: IUser[]
+    following?: IUser[]
 }
+
+
 
 export type InputUser = Omit<IUser, 'id'| 'isPrivate'|'cover'| 'picture'>
 
@@ -20,6 +24,7 @@ export interface IResponse{
     payload?:unknown
     user?:IWideUser
 }
+
 
 export interface IWideUser extends IUser{
     followers: IUser[]
@@ -41,12 +46,20 @@ export interface ILoginUpdateForm {
 }
 
 export interface IPost {
-    id:number
-    title:string
-    picture:string
+    id: number;
+    title: string;
+    picture: string;
+    likes: IUser[];
 }
 
-export interface IAccount extends IUser {
-    isPrivate: boolean
-    posts: IPost[]
-}
+export interface IAccount extends IUser{
+    posts?:IPost[]
+    available:boolean
+    connection:{
+      blockedme:boolean
+      didIBlock:boolean
+      following:boolean
+      followsMe:boolean
+      requested:boolean
+    }
+  }

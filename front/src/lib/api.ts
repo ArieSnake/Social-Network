@@ -82,3 +82,36 @@ export const handlePrivacyUpdate = async (): Promise<IResponse> => {
     const response = await Axios.patch('/account/set')
     return response.data
 }
+
+export const handleSendFollow = async(id:number | string):Promise<IResponse> => {
+   
+    const response = await Axios.post('/account/follow/' + id)
+    console.log("API Response:", response);
+    return response.data
+  }
+
+export const handleUnfollow = async(id:number | string):Promise<IResponse> => {
+    const response = await Axios.post('/account/unfollow/' + id)
+    return response.data
+}
+
+export const handleCancelRequest = async (id:number | string):Promise<IResponse> => {
+    const response = await Axios.delete('/request/cancel/' + id)
+    return response.data
+}
+
+export const handleGetRequests = async():Promise<IResponse> => {
+    const response  = await Axios.get('/requests')
+    return response.data
+}
+
+export const handleAcceptRequest = async(id:number | string):Promise<IResponse> => {
+    const response = await Axios.patch('/requests/accept/' + id)
+    return response.data
+}
+
+export const handleDeclineRequest = async(id: number | string):Promise<IResponse> => {
+    const response = await Axios.patch('/requests/decline/' + id)
+    return response.data
+}
+
