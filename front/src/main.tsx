@@ -14,6 +14,8 @@ import { Search } from './pages/Profile/Search';
 import { PrivacyUpdate } from './pages/Profile/settings/privacy-update';
 import { Account } from './pages/Profile/UserProfile';
 import { Requests } from './pages/Profile/Requests';
+import { Following } from './pages/Profile/Followings';
+import { Followers } from './pages/Profile/Followers';
 
 const routes = createBrowserRouter([
   {
@@ -47,6 +49,14 @@ const routes = createBrowserRouter([
       {
         path: 'requests',
         element: <Requests />
+      },
+      {
+        path:'followings',
+        element:<Following/>
+      },
+      {
+        path:'followers',
+        element:<Followers/>
       },
       {
         path: 'settings',

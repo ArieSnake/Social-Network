@@ -1,34 +1,41 @@
-import { useEffect, useRef, useState } from "react";
-import { handleGetPosts, handlePostCreation } from "../../../lib/api";
-import { IPost } from "../../../lib/types";
-import { Gallery } from "../../../components/Gallery";
+import { useEffect, useRef, useState } from "react"
+import { handleGetPosts, handlePostCreation, handleDeletePost } from "../../../lib/api"
+import { IPost } from "../../../lib/types"
+import { Gallery } from "../../../components/Gallery"
 
 export const Posts = () => {
     const handleUpload = () => {
         if (photo.current) {
-            const file = photo.current.files?.[0];
+            const file = photo.current.files?.[0]
             if (file) {
-                const form = new FormData();
-                form.append("photo", file);
-                form.append("content", text);
+                const form = new FormData()
+                form.append("photo", file)
+                form.append("content", text)
 
                 handlePostCreation(form).then((response) => {
-                    setList([...list, response.payload as IPost]);
-                });
+                    setList([...list, response.payload as IPost])
+                })
             }
         }
-    };
+    }
 
-    const [list, setList] = useState<IPost[]>([]);
-    const [text, setText] = useState<string>("");
-    const photo = useRef<HTMLInputElement | null>(null);
+    const handleDelete = (postId: number) => {
+        handleDeletePost(postId).then((response) => {
+            if (response.status === "ok") {
+                setList((prevList) => prevList.filter((post) => post.id !== postId))
+            }
+        })
+    }
+
+    const [list, setList] = useState<IPost[]>([])
+    const [text, setText] = useState<string>("")
+    const photo = useRef<HTMLInputElement | null>(null)
 
     useEffect(() => {
         handleGetPosts().then((response) => {
-            console.log(response.payload);
-            setList(response.payload as IPost[]);
-        });
-    }, []);
+            setList(response.payload as IPost[])
+        })
+    }, [])
 
     return (
         <div className="posts-container">
@@ -58,7 +65,7 @@ export const Posts = () => {
                 </button>
             </div>
 
-            <Gallery posts={list} />
+            <Gallery posts={list} onDeletePost={handleDelete}/>
         </div>
-    );
-};
+    )
+}

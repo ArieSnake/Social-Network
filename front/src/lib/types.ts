@@ -46,11 +46,16 @@ export interface ILoginUpdateForm {
 }
 
 export interface IPost {
-    id: number;
-    title: string;
-    picture: string;
-    likes: IUser[];
+    id: number
+    title: string
+    picture: string
+    likes: IUser[]
+    isLiked: boolean
+    author: IUser
+    blockedMe: boolean
+    didIBlock: boolean
 }
+
 
 export interface IAccount extends IUser{
     posts?:IPost[]
